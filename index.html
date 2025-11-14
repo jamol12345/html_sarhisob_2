@@ -10,28 +10,19 @@
     --card: #ffffff;
     --muted: #6b7280;
     --accent: #2563eb;
-    --glass: rgba(255,255,255,0.6);
   }
   *{box-sizing:border-box}
   body{
     margin:0;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
     background: linear-gradient(180deg,var(--bg), #eef2ff 60%);
     color:#0f172a;
-    -webkit-font-smoothing:antialiased;
     padding:28px;
   }
 
-  header{
-    text-align:center;
-    margin-bottom:22px;
-  }
-  header h1{ margin:0; font-size:20px }
-  header p{ margin:8px 0 0; color:var(--muted) }
-
   .grid{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
     gap:18px;
     max-width:1100px;
     margin:0 auto;
@@ -48,6 +39,7 @@
     gap:12px;
   }
 
+  /* --- MEDIA STYLES --- */
   .media{
     height:250px;
     border-radius:8px;
@@ -58,44 +50,32 @@
     background:linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0.02));
   }
 
-  .media img{
+  .media img,
+  .media iframe,
+  .media video {
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
-    transition: transform .35s ease;
+    border:0;
   }
-  .media img:hover{ transform:scale(1.05) }
+
+  /* audio uchun alohida balandlik qiladi */
+  .audio-box {
+    height:250px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0.02));
+    border-radius:8px;
+  }
+
+  .audio-box audio{
+    width:100%;
+  }
 
   h3{ margin:0; font-size:16px }
   p.desc{ margin:0; color:var(--muted); font-size:14px }
-
-  .actions{
-    display:flex;
-    gap:8px;
-    margin-top:auto;
-  }
-
-  .btn{
-    display:inline-block;
-    padding:8px 10px;
-    border-radius:8px;
-    text-decoration:none;
-    font-size:14px;
-    border:1px solid rgba(15,23,42,0.06);
-    background:#fff;
-    color:#0f172a;
-    cursor:pointer;
-    transition: .18s;
-  }
-  .btn:hover{ transform:translateY(-3px) }
-
-  .primary{
-    background:var(--accent);
-    color:white;
-    border:none;
-    box-shadow: 0 6px 18px rgba(37,99,235,0.12);
-  }
 
   .meta{
     display:flex;
@@ -105,19 +85,38 @@
     font-size:13px;
   }
 
-  footer{
-    text-align:center;
-    margin-top:20px;
-    color:var(--muted);
-    font-size:13px;
+  .btn{
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+    border:1px solid rgba(15,23,42,0.06);
+    background:#fff;
+    color:#0f172a;
+    cursor:pointer;
+    transition:.18s;
   }
+  .btn:hover{ transform:translateY(-3px) }
+
+  .primary{
+    background:var(--accent);
+    color:white;
+    border:none;
+    box-shadow:0 6px 18px rgba(37,99,235,0.12);
+  }
+
+  .actions{
+    display:flex;
+    gap:8px;
+    margin-top:auto;
+  }
+
 </style>
 </head>
 <body>
 
-
-
 <main class="grid">
+
   <!-- Card 1 -->
   <article class="card">
     <div class="media">
@@ -125,13 +124,9 @@
     </div>
     <h3>Veb-dizayn</h3>
     <p class="desc">Oddiy sayt dizayni, kartalar, grid va responsiv ishlari.</p>
-    <div class="meta">
-      <span>HTML & CSS</span>
-      <span>•</span>
-      <span>Beginner</span>
-    </div>
+    <div class="meta"><span>HTML & CSS</span> • <span>Beginner</span></div>
     <div class="actions">
-      <a class="btn primary" href="https://www.example.com" target="_blank">Ko'proq</a>
+      <a class="btn primary" href="#" target="_blank">Ko'proq</a>
       <a class="btn" href="mailto:teacher@example.com">Soʻrov yuborish</a>
     </div>
   </article>
@@ -142,15 +137,11 @@
       <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop" alt="Code">
     </div>
     <h3>Frontend ishlari</h3>
-    <p class="desc">HTML, CSS, hamda oddiy JavaScript bilan interaktiv elementlar.</p>
-    <div class="meta">
-      <span>React/Vanilla</span>
-      <span>•</span>
-      <span>Middle</span>
-    </div>
+    <p class="desc">HTML, CSS va JS orqali interaktiv ishlanmalar.</p>
+    <div class="meta"><span>React/Vanilla</span> • <span>Middle</span></div>
     <div class="actions">
-      <a class="btn primary" href="https://www.example.com" target="_blank">Kurs</a>
-      <a class="btn" href="tel:+998901234567">Qo'ng'iroq</a>
+      <a class="btn primary" href="#" target="_blank">Kurs</a>
+      <a class="btn" href="tel:+998901234567">Qoʻngʻiroq</a>
     </div>
   </article>
 
@@ -160,16 +151,46 @@
       <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80&auto=format&fit=crop" alt="Mobile">
     </div>
     <h3>Mobil ilovalar</h3>
-    <p class="desc">Responsive dizayn, PWA va mobil-first yondashuv.</p>
-    <div class="meta">
-      <span>Responsive</span>
-      <span>•</span>
-      <span>Advanced</span>
-    </div>
+    <p class="desc">Responsive dizayn va PWA yondashuvi.</p>
+    <div class="meta"><span>Responsive</span> • <span>Advanced</span></div>
     <div class="actions">
-      <a class="btn primary" href="https://www.example.com" target="_blank">Portfolio</a>
+      <a class="btn primary" href="#" target="_blank">Portfolio</a>
       <a class="btn" href="mailto:info@example.com">Xabar</a>
     </div>
+  </article>
+
+  <!-- Card 4 – IFRAME -->
+  <article class="card">
+    <div class="media">
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" allowfullscreen></iframe>
+    </div>
+    <h3>Iframe misoli</h3>
+    <p class="desc">YouTube videoni iframe orqali ko‘rsatish.</p>
+    <div class="meta"><span>Iframe</span> • <span>HTML5</span></div>
+  </article>
+
+  <!-- Card 5 – VIDEO -->
+  <article class="card">
+    <div class="media">
+      <video controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </div>
+    <h3>Video misoli</h3>
+    <p class="desc">Video tegi bilan MP4 faylni o‘rnatish.</p>
+    <div class="meta"><span>Video</span> • <span>HTML5</span></div>
+  </article>
+
+  <!-- Card 6 – AUDIO -->
+  <article class="card">
+    <div class="audio-box">
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mp3">
+      </audio>
+    </div>
+    <h3>Audio misoli</h3>
+    <p class="desc">Audio tegi orqali MP3 fayl qo‘yish.</p>
+    <div class="meta"><span>Audio</span> • <span>HTML5</span></div>
   </article>
 
 </main>
