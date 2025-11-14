@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hero-container {
+  width: 100%;
+}
+h2 {
+  font-size: 50px;
+  color: rgb(235, 180, 78);
+  text-align: center;
+  margin-top: 50px;
+}
+.cards {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 15px;
+  border: 2px solid #112;
+  padding: 1rem;
+  box-shadow: 20px 10px 20px gray;
+}
+button {
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    background-color: #112;
+    color: white;
+    font-size: 22px;
+}
+h1{
+    font-size: 30px;
+    font-family: monospace;
+    text-align: center;
+}
+img {
+  width: 100%;
+}

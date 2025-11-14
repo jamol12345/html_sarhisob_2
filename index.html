@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Cards — Absolute Image Demo</title>
+<style>
+  :root{
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #2563eb;
+    --glass: rgba(255,255,255,0.6);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,var(--bg), #eef2ff 60%);
+    color:#0f172a;
+    -webkit-font-smoothing:antialiased;
+    padding:28px;
+  }
+
+  header{
+    text-align:center;
+    margin-bottom:22px;
+  }
+  header h1{ margin:0; font-size:20px }
+  header p{ margin:8px 0 0; color:var(--muted) }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    max-width:1100px;
+    margin:0 auto;
+  }
+
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:14px;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.06);
+    border:1px solid rgba(15,23,42,0.04);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .media{
+    height:250px;
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(180deg, rgba(37,99,235,0.06), rgba(37,99,235,0.02));
+  }
+
+  .media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition: transform .35s ease;
+  }
+  .media img:hover{ transform:scale(1.05) }
+
+  h3{ margin:0; font-size:16px }
+  p.desc{ margin:0; color:var(--muted); font-size:14px }
+
+  .actions{
+    display:flex;
+    gap:8px;
+    margin-top:auto;
+  }
+
+  .btn{
+    display:inline-block;
+    padding:8px 10px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:14px;
+    border:1px solid rgba(15,23,42,0.06);
+    background:#fff;
+    color:#0f172a;
+    cursor:pointer;
+    transition: .18s;
+  }
+  .btn:hover{ transform:translateY(-3px) }
+
+  .primary{
+    background:var(--accent);
+    color:white;
+    border:none;
+    box-shadow: 0 6px 18px rgba(37,99,235,0.12);
+  }
+
+  .meta{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  footer{
+    text-align:center;
+    margin-top:20px;
+    color:var(--muted);
+    font-size:13px;
+  }
+</style>
+</head>
+<body>
+
+
+
+<main class="grid">
+  <!-- Card 1 -->
+  <article class="card">
+    <div class="media">
+      <img src="https://images.unsplash.com/photo-1506765515384-028b60a970df?w=1200&q=80&auto=format&fit=crop" alt="Design">
+    </div>
+    <h3>Veb-dizayn</h3>
+    <p class="desc">Oddiy sayt dizayni, kartalar, grid va responsiv ishlari.</p>
+    <div class="meta">
+      <span>HTML & CSS</span>
+      <span>•</span>
+      <span>Beginner</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="https://www.example.com" target="_blank">Ko'proq</a>
+      <a class="btn" href="mailto:teacher@example.com">Soʻrov yuborish</a>
+    </div>
+  </article>
+
+  <!-- Card 2 -->
+  <article class="card">
+    <div class="media">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop" alt="Code">
+    </div>
+    <h3>Frontend ishlari</h3>
+    <p class="desc">HTML, CSS, hamda oddiy JavaScript bilan interaktiv elementlar.</p>
+    <div class="meta">
+      <span>React/Vanilla</span>
+      <span>•</span>
+      <span>Middle</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="https://www.example.com" target="_blank">Kurs</a>
+      <a class="btn" href="tel:+998901234567">Qo'ng'iroq</a>
+    </div>
+  </article>
+
+  <!-- Card 3 -->
+  <article class="card">
+    <div class="media">
+      <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80&auto=format&fit=crop" alt="Mobile">
+    </div>
+    <h3>Mobil ilovalar</h3>
+    <p class="desc">Responsive dizayn, PWA va mobil-first yondashuv.</p>
+    <div class="meta">
+      <span>Responsive</span>
+      <span>•</span>
+      <span>Advanced</span>
+    </div>
+    <div class="actions">
+      <a class="btn primary" href="https://www.example.com" target="_blank">Portfolio</a>
+      <a class="btn" href="mailto:info@example.com">Xabar</a>
+    </div>
+  </article>
+
+</main>
+
+</body>
+</html>
